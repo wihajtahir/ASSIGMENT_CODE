@@ -1,0 +1,24 @@
+🔍 Overview
+Your Java program implements a peer-to-peer chat application that allows two users to communicate over a network by sending and receiving text messages. The same program can be run by both users with different command-line parameters, enabling dynamic assignment of IP and ports.
+
+✅ Key Functionalities
+Dual Role (Server and Client):
+The program acts both as a server (to receive messages) and a client (to send messages). This design allows two-way communication between peers.
+
+Command-Line Configuration:
+The peer accepts the local port, remote port, and the IP address of the remote peer as command-line arguments. This provides flexibility to run the same code for different peers.
+
+Concurrent Message Receiving:
+A dedicated background thread is used to keep listening for incoming messages. This allows the user to send and receive messages simultaneously, without blocking either operation.
+
+Message Sending Loop:
+The main thread handles sending messages continuously. The user can keep typing messages, and they are sent to the remote peer in real-time. The loop only terminates when the user types "exit".
+
+Stateless Communication:
+For every message sent, a new socket connection is established. This keeps the communication simple and avoids managing persistent socket states.
+
+Exception Handling:
+Basic error handling is in place to notify the user if a message fails to send, such as when the remote peer is not reachable.
+
+🎯 Use Case
+This application is ideal for learning the fundamentals of socket programming, threading, and basic peer-to-peer communication. It works perfectly on the same machine or across machines in the same network, provided appropriate ports and firewall permissions are configured.
